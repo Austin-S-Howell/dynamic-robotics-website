@@ -1,0 +1,74 @@
+/* ============================================================
+   COLOR TOKENS — Dynamic Robotics & Integrations
+   Primary  : #2E973E  (signal green — automation, "go", growth)
+   Secondary: #CBCBCB  (machined gray)
+   Base     : white
+   ============================================================ */
+:root {
+  /* --- Primary: signal green ------------------------------- */
+  --green-50:  #eef8f0;
+  --green-100: #d7efdb;
+  --green-200: #aadfb4;
+  --green-300: #79cd89;
+  --green-400: #4fb463;
+  --green-500: #2e973e;   /* BRAND PRIMARY */
+  --green-600: #257d33;
+  --green-700: #1d6228;
+  --green-800: #16491f;
+  --green-900: #0f3115;
+
+  /* --- Neutral: machined gray ----------------------------- */
+  --neutral-0:   #ffffff;
+  --neutral-50:  #f7f8f7;
+  --neutral-100: #eef0ee;
+  --neutral-200: #e0e2e0;
+  --neutral-300: #cbcbcb;   /* BRAND SECONDARY */
+  --neutral-400: #a6a8a6;
+  --neutral-500: #7e817e;
+  --neutral-600: #5c5f5c;
+  --neutral-700: #3f423f;
+  --neutral-800: #262826;
+  --neutral-900: #141614;   /* near-black ink */
+
+  /* --- Semantic status ------------------------------------ */
+  --amber-500:  #d98a16;
+  --amber-100:  #faedd3;
+  --red-500:    #cf3b3b;
+  --red-100:    #f7dada;
+  --blue-500:   #2f6fd0;
+  --blue-100:   #dbe6f8;
+
+  /* ===== SEMANTIC ALIASES ================================== */
+  --color-primary:        var(--green-500);
+  --color-primary-hover:  var(--green-600);
+  --color-primary-active: var(--green-700);
+  --color-primary-tint:   var(--green-50);
+  --color-on-primary:     #ffffff;
+
+  --text-strong:   var(--neutral-900);
+  --text-body:     var(--neutral-700);
+  --text-muted:    var(--neutral-500);
+  --text-inverse:  #ffffff;
+  --text-link:     var(--green-600);
+
+  --surface-page:   #ffffff;
+  --surface-muted:  var(--neutral-50);
+  --surface-sunken: var(--neutral-100);
+  --surface-card:   #ffffff;
+  --surface-ink:    var(--neutral-900);   /* dark sections */
+  --surface-ink-2:  var(--neutral-800);
+
+  --border-subtle:  var(--neutral-200);
+  --border-default: var(--neutral-300);
+  --border-strong:  var(--neutral-400);
+  --border-focus:   var(--green-500);
+
+  --status-success:    var(--green-500);
+  --status-success-bg: var(--green-50);
+  --status-warning:    var(--amber-500);
+  --status-warning-bg: var(--amber-100);
+  --status-danger:     var(--red-500);
+  --status-danger-bg:  var(--red-100);
+  --status-info:       var(--blue-500);
+  --status-info-bg:    var(--blue-100);
+}

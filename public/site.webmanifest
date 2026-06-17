@@ -1,0 +1,15 @@
+{
+  "name": "Dynamic Robotics And Integration",
+  "short_name": "Dynamic Robotics",
+  "description": "Robotic system integrator in Springfield, MO.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2e973e",
+  "icons": [
+    { "src": "favicon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "favicon-512.png", "type": "image/png", "sizes": "512x512" },
+    { "src": "favicon-512.png", "type": "image/png", "sizes": "512x512", "purpose": "maskable" }
+  ]
+}

@@ -1,0 +1,40 @@
+/* ============================================================
+   TYPOGRAPHY TOKENS — Dynamic Robotics & Integrations
+   ============================================================ */
+:root {
+  /* --- Families ------------------------------------------- */
+  --font-logo:    "Space Grotesk", "Segoe UI", system-ui, sans-serif; /* wordmark only */
+  --font-display: "Open Sans", "Segoe UI", system-ui, sans-serif;     /* headings */
+  --font-body:    "Open Sans", system-ui, -apple-system, sans-serif;  /* body / UI */
+  --font-mono:    "IBM Plex Mono", ui-monospace, "SF Mono", monospace;
+
+  /* --- Weights -------------------------------------------- */
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  /* --- Type scale (1.250 major-third, 16px base) ---------- */
+  --text-2xs: 0.6875rem;  /* 11px — mono micro labels */
+  --text-xs:  0.75rem;    /* 12px */
+  --text-sm:  0.875rem;   /* 14px */
+  --text-md:  1rem;       /* 16px — body */
+  --text-lg:  1.125rem;   /* 18px */
+  --text-xl:  1.5rem;     /* 24px */
+  --text-2xl: 2rem;       /* 32px */
+  --text-3xl: 2.75rem;    /* 44px */
+  --text-4xl: 3.75rem;    /* 60px — hero */
+  --text-5xl: 5rem;       /* 80px — display */
+
+  /* --- Line heights --------------------------------------- */
+  --leading-tight:   1.05;
+  --leading-snug:    1.2;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.65;
+
+  /* --- Letter spacing ------------------------------------- */
+  --tracking-tight:  -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em;
+  --tracking-label:  0.12em;   /* mono eyebrow caps */
+}

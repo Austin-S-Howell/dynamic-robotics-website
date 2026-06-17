@@ -1,0 +1,15 @@
+/* App shell layout + entrance / page-transition animations. */
+
+html, body { overflow-x: hidden; }
+body { margin: 0; background: var(--surface-page); font-family: var(--font-body); }
+
+.dr-shell { min-height: 100vh; display: flex; flex-direction: column; }
+.dr-shell > header { animation: drNavDrop 0.5s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+.dr-page { flex: 1 0 auto; display: flex; flex-direction: column; animation: drFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.dr-page > main { flex: 1 0 auto; }
+
+@keyframes drNavDrop { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes drFadeUp  { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (prefers-reduced-motion: reduce) { .dr-shell > header, .dr-page { animation: none; } }

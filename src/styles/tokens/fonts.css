@@ -1,0 +1,11 @@
+/* ============================================================
+   FONTS — Dynamic Robotics & Integrations
+   Loaded via Google Fonts CDN (no local binaries shipped).
+   Logo:     Space Grotesk  — wordmark only
+   Headings: Open Sans      — clean neutral humanist (Calibri/Arial-like)
+   Body/UI:  Open Sans      — same family, lighter weights
+   Mono:     IBM Plex Mono  — specs, labels, data readouts
+   NOTE: substitute with self-hosted .woff2 for production if
+   offline use is required.
+   ============================================================ */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Open+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
