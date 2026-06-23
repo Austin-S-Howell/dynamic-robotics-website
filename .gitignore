@@ -24,3 +24,8 @@ pnpm-debug.log*
 .env
 .env.*
 !.env.example
+
+# Raw media masters (~290MB of 4K phone footage / full-res photos).
+# Only the web-optimized versions in src/assets/site/ are committed & deployed.
+# Keep these locally for re-editing, or move them to Git LFS if you want them tracked.
+src/assets/main/

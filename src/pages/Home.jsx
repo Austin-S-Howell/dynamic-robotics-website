@@ -2,22 +2,30 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Card } from "../components/index.js";
 import { useIsMobile } from "../hooks/useIsMobile.js";
+import robotRender from "../assets/site/robot.png";
 
 const ArrowR = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
 );
 
-function ImagePanel({ label, height = 360 }) {
+function ImagePanel({ label, height = 360, src = null, fit = "cover", background = null }) {
   return (
     <div style={{
+      position: "relative",
       height, borderRadius: "var(--radius-lg)",
-      background: "var(--surface-sunken)", border: "1px solid var(--border-subtle)",
+      background: background || "var(--surface-sunken)", border: "1px solid var(--border-subtle)",
       display: "flex", alignItems: "center", justifyContent: "center", gap: 10,
       color: "var(--neutral-400)", overflow: "hidden",
-      backgroundImage: "repeating-linear-gradient(135deg, rgba(0,0,0,0.025) 0 1px, transparent 1px 11px)",
+      backgroundImage: src ? "none" : "repeating-linear-gradient(135deg, rgba(0,0,0,0.025) 0 1px, transparent 1px 11px)",
     }}>
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-      <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase" }}>{label}</span>
+      {src ? (
+        <img src={src} alt={label} loading="lazy" style={{ width: "100%", height: "100%", objectFit: fit, display: "block", padding: fit === "contain" ? "var(--space-5)" : 0, boxSizing: "border-box" }} />
+      ) : (
+        <>
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase" }}>{label}</span>
+        </>
+      )}
     </div>
   );
 }
@@ -26,16 +34,10 @@ export default function Home() {
   const navigate = useNavigate();
   const isMobile = useIsMobile();
   const caps = [
-    { n: "01", t: "Robotic Welding", d: "MIG, TIG and spot cells with seam tracking and fume control." },
-    { n: "02", t: "Palletizing & Packaging", d: "End-of-line stacking, case packing and shrink up to 210 kg." },
-    { n: "03", t: "Machine Tending", d: "CNC, press and injection-mold loading with quick-change EOAT." },
-    { n: "04", t: "Vision & Inspection", d: "2D/3D guided pick-and-place and 100% inline verification." },
-  ];
-  const stats = [
-    { k: "Cells delivered", v: "320+" },
-    { k: "Avg. uptime", v: "99.2%" },
-    { k: "Years integrating", v: "12" },
-    { k: "Payload max", v: "1500kg" },
+    { n: "01", t: "Robotic & Laser Welding", d: "RBW cobot cells for MIG and laser welding — fixtured tables and repeatable beads." },
+    { n: "02", t: "Custom Control Panels", d: "UL-ready panel builds: PLC, VFD and safety, point-to-point wired and labeled." },
+    { n: "03", t: "Collaborative Cells", d: "Cobot welding and tending that share the floor with your team — ISO/TS 15066." },
+    { n: "04", t: "Enclosures & Fabrication", d: "Machine enclosures, guarding and custom steel — cut, formed and finished in-house." },
   ];
   return (
     <main>
@@ -47,29 +49,24 @@ export default function Home() {
               Automation,<br/>engineered for<br/><span style={{ color: "var(--color-primary)" }}>your floor.</span>
             </h1>
             <p style={{ fontSize: "var(--text-lg)", lineHeight: 1.55, color: "var(--text-body)", maxWidth: isMobile ? "100%" : 460, margin: isMobile ? "0 auto 30" : "0 0 30" }}>
-              We design, build and integrate robotic cells that weld, pack, tend and inspect — from a single cobot to a full automated line.
+              We design, build and integrate robotic welding cells, custom control panels and automation — from a single cobot to a full production line.
             </p>
             <div style={{ display: "flex", flexDirection: isMobile ? "column" : "row", gap: 12, flexWrap: "wrap", justifyContent: isMobile ? "center" : "flex-start" }}>
               <Button size="lg" fullWidth={isMobile} iconRight={<ArrowR/>} onClick={() => navigate("/services")}>Browse services</Button>
               <Button size="lg" fullWidth={isMobile} variant="secondary" onClick={() => navigate("/contact")}>Talk to an engineer</Button>
             </div>
           </div>
-          <ImagePanel label="Hero — integration floor photo" height={isMobile ? 240 : 420} />
+          <ImagePanel
+            label="Rainbow Robotics collaborative welding cobot"
+            src={robotRender}
+            fit="contain"
+            background="radial-gradient(120% 120% at 50% 14%, var(--color-primary-tint) 0%, var(--surface-sunken) 72%)"
+            height={isMobile ? 300 : 460}
+          />
         </div>
       </section>
 
-      <section style={{ background: "var(--surface-ink)", color: "#fff" }}>
-        <div style={{ maxWidth: "var(--container-xl)", margin: "0 auto", padding: "var(--space-6) var(--gutter)", display: "grid", gridTemplateColumns: isMobile ? "repeat(2, 1fr)" : "repeat(4, 1fr)", gap: "var(--space-5)" }}>
-          {stats.map((s) => (
-            <div key={s.k} style={{ textAlign: isMobile ? "center" : "left" }}>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "var(--text-3xl)", color: "#fff" }}>{s.v}</div>
-              <div style={{ fontFamily: "var(--font-mono)", fontSize: "var(--text-xs)", letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--green-400)", marginTop: 4 }}>{s.k}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section style={{ padding: "var(--space-9) var(--gutter)", maxWidth: "var(--container-xl)", margin: "0 auto" }}>
+      <section style={{ padding: "0 var(--gutter) var(--space-9)", maxWidth: "var(--container-xl)", margin: "0 auto" }}>
         <div style={{ display: "flex", justifyContent: isMobile ? "center" : "space-between", alignItems: isMobile ? "center" : "flex-end", gap: 16, flexWrap: "wrap", textAlign: isMobile ? "center" : "left", marginBottom: "var(--space-6)" }}>
           <div>
             <span className="dr-eyebrow">// Capabilities</span>

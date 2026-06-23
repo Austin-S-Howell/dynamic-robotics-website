@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, Card, Input, Select, Checkbox } from "../components/index.js";
+import { Button, Card, Input, Select, Checkbox, LocationMap } from "../components/index.js";
 import { MACHINES } from "../data/machines.js";
 import { usePageContext } from "../App.jsx";
 import { useIsMobile } from "../hooks/useIsMobile.js";
@@ -140,7 +140,7 @@ export default function Contact() {
                 <Select label="Primary timeline" placeholder="When do you need it running?" value={service} onChange={setService} options={TIMELINE_OPTS} />
               </div>
               <div style={{ gridColumn: "1 / -1" }}>
-                <Input label="Tell us about your line" multiline rows={4} placeholder="Parts, cycle time, current bottleneck…" />
+                <Input label="Tell us about your line" name="message" multiline rows={4} placeholder="Parts, cycle time, current bottleneck…" />
               </div>
               <div style={{ gridColumn: "1 / -1", display: "flex", flexDirection: "column", gap: 14, marginTop: 4 }}>
                 <Checkbox checked={callback} onChange={setCallback} label="I'd like a callback" hint="A controls engineer will reach out within 1 business day." />
@@ -155,6 +155,26 @@ export default function Contact() {
           </form>
         </Card>
       </div>
+
+      <section style={{ marginTop: "var(--space-8)" }}>
+        <div style={{ textAlign: isMobile ? "center" : "left" }}>
+          <span className="dr-eyebrow">// Visit us</span>
+          <h2 style={{ fontSize: "var(--text-xl)", margin: "10px 0 10px" }}>Find us in Springfield, MO</h2>
+          <p style={{ fontFamily: "var(--font-mono)", fontSize: "var(--text-sm)", color: "var(--text-body)", margin: "0 0 18px", lineHeight: 1.9 }}>
+            1630 N Eldon Ave, Springfield, MO 65802<br/>
+            <a href="tel:+14177733372" style={{ color: "var(--color-primary)", textDecoration: "none" }}>(417) 773-3372</a>
+            {"  ·  "}
+            <a href="mailto:jimmy.holiday@dynamicrobotics.com" style={{ color: "var(--color-primary)", textDecoration: "none" }}>jimmy.holiday@dynamicrobotics.com</a>
+          </p>
+        </div>
+        <LocationMap
+          lat={37.228369}
+          lng={-93.3571434}
+          zoom={16}
+          label="Dynamic Robotics And Integration"
+          address="1630 N Eldon Ave, Springfield, MO 65802"
+        />
+      </section>
     </main>
   );
 }

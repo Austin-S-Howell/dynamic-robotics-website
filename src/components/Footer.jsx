@@ -7,13 +7,13 @@ import { useIsMobile } from "../hooks/useIsMobile.js";
  */
 export function Footer({
   columns = [
-    { title: "Capabilities", links: ["Robotic welding", "Palletizing", "Machine tending", "Vision & inspection"] },
+    { title: "Capabilities", links: ["Robotic & laser welding", "Custom control panels", "Collaborative cells", "Enclosures & fabrication"] },
     { title: "Company", links: ["About", "Careers", "Case studies", "Contact"] },
     { title: "Resources", links: ["Process guide", "Safety & standards", "FAQ"] },
   ],
   logoSrc = "assets/logo-emblem.png",
   tagline = "Robotic integration engineered for your floor.",
-  contact = { phone: "(417) 555-0142", email: "build@dynamicrobotics.com", location: "Springfield, MO" },
+  contact = { phone: "(417) 773-3372", email: "jimmy.holiday@dynamicrobotics.com", location: "1630 N Eldon Ave, Springfield, MO 65802" },
   style = {},
 }) {
   const isMobile = useIsMobile();

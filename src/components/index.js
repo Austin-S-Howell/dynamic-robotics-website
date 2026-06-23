@@ -7,3 +7,5 @@ export { Card } from "./Card.jsx";
 export { Navbar } from "./Navbar.jsx";
 export { Footer } from "./Footer.jsx";
 export { Gallery } from "./Gallery.jsx";
+export { LocationMap } from "./LocationMap.jsx";
+export { VideoPlayer } from "./VideoPlayer.jsx";
